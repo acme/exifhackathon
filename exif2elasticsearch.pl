@@ -18,7 +18,7 @@ foreach my $filename (keys %$data) {
     say "* $filename";
     $exif->{Canon_CameraISO} = 0 if $exif->{Canon_CameraISO} eq 'Auto';
     $exif->{Canon_AFPointsInFocus} = 0 if $exif->{Canon_AFPointsInFocus} eq '(none)';
-    foreach my $field ('ExifIFD_ExposureCompensation', 'Canon_ExposureCompensation') {
+    foreach my $field ('ExifIFD_ExposureCompensation', 'Canon_ExposureCompensation', 'Canon_ExposureTime') {
         $exif->{$field} = eval $exif->{$field};
     }
     if (defined $exif->{Canon_CameraTemperature}) {
@@ -44,6 +44,18 @@ foreach my $filename (keys %$data) {
         $distance = '10to100',
       }
       $exif->{distance} = $distance;
+    }
+    if (defined $exif->{Canon_ExposureTime}) {
+      my $exposuretime;
+      say $exif->{Canon_ExposureTime};
+      if ($exif->{Canon_ExposureTime} <= 0.01) {
+        $exposuretime = 'low';
+      } elsif ($exif->{Canon_ExposureTime} <= 0.1) {
+        $exposuretime = 'medium',
+      } else {
+        $exposuretime = 'high',
+      }
+      $exif->{exposuretime} = $exposuretime;
     }
     foreach my $field ('Canon_AFPointsInFocus') {
         delete $exif->{$field};

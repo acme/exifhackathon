@@ -69,8 +69,15 @@
       <h3>Focus Distance Upper</h3>
       <div class="btn-group">
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0to0d3&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0-0.3m</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0d3to9&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0.4-10m</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0d3to9&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0.3-10m</button>
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:10to100&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">10-100m</button>
+      </div>
+
+      <h3>Exposure time</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:low&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0-0.01s</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:medium&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.01-0.1s</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:high&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.1-2s</button>
       </div>
 
       <h1><span id="nhits">0</span> of <span id="nphotos">0</span> photos</h1>
