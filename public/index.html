@@ -66,6 +66,12 @@
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:1&fields=filename,Canon_FacesDetected&size=500">Faces</button>
       </div>
 
+      <h3>Macro mode</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_MacroMode:Normal&fields=filename,Canon_MacroMode&size=500">Normal</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_MacroMode:Macro&fields=filename,Canon_MacroMode&size=500">Macro</button>
+      </div>
+
       <h3>Focus Distance Upper</h3>
       <div class="btn-group">
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0to0d3&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0-0.3m</button>
