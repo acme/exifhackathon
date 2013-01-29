@@ -53,58 +53,78 @@
 
     <div class="container">
 
-      <h3>Camera Temperature</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:19to24&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">19-24&deg;C</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:25to28&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">25-28&deg;C</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:29to34&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">29-34&deg;C</button>
+      <div class="row">
+        <div class="span4">
+          <h3>Camera Temperature</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:19to24&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">19-24&deg;C</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:25to28&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">25-28&deg;C</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:29to34&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">29-34&deg;C</button>
+          </div>
+        </div>
+        <div class="span4">
+          <h3>Faces Detected</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:0&fields=filename,Canon_FacesDetected&size=500">No faces</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:1&fields=filename,Canon_FacesDetected&size=500">Faces</button>
+          </div>
+        </div>
+        <div class="span4">
+          <h3>Macro mode</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_MacroMode:Normal&fields=filename,Canon_MacroMode&size=500">Normal</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_MacroMode:Macro&fields=filename,Canon_MacroMode&size=500">Macro</button>
+          </div>
+        </div>
       </div>
 
-      <h3>Faces Detected</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:0&fields=filename,Canon_FacesDetected&size=500">No faces</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:1&fields=filename,Canon_FacesDetected&size=500">Faces</button>
+      <div class="row">
+        <div class="span4">
+          <h3>Focus Distance Upper</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0to0d3&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0-0.3m</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0d3to9&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0.3-10m</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:10to100&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">10-100m</button>
+          </div>
+        </div>
+        <div class="span4">
+
+          <h3>Optical zoom</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:low&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">None</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:medium&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">Some</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:high&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">Maximum</button>
+          </div>
+        </div>
+        <div class="span4">
+
+          <h3>Exposure time</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:low&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0-0.01s</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:medium&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.01-0.1s</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:high&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.1-2s</button>
+          </div>
+        </div>
       </div>
 
-      <h3>Macro mode</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_MacroMode:Normal&fields=filename,Canon_MacroMode&size=500">Normal</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_MacroMode:Macro&fields=filename,Canon_MacroMode&size=500">Macro</button>
-      </div>
+      <div class="row">
+        <div class="span4">
+          <h3>GPS Altitude</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:low&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">0-10m</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:medium&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">10-100m</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:high&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">100-200m</button>
+          </div>
+        </div>
+        <div class="span4">
 
-      <h3>Focus Distance Upper</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0to0d3&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0-0.3m</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0d3to9&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0.3-10m</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:10to100&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">10-100m</button>
-      </div>
-
-      <h3>Optical zoom</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:low&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">None</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:medium&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">Some</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:high&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">Maximum</button>
-      </div>
-
-      <h3>Exposure time</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:low&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0-0.01s</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:medium&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.01-0.1s</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:high&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.1-2s</button>
-      </div>
-
-      <h3>GPS Altitude</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:low&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">0-10m</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:medium&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">10-100m</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:high&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">100-200m</button>
-      </div>
-
-      <h3>Sequence number</h3>
-      <div class="btn-group">
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:low&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">1st</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:medium&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">2nd-5th</button>
-        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:high&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">6th-9th</button>
+          <h3>Sequence number</h3>
+          <div class="btn-group">
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:low&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">1st</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:medium&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">2nd-5th</button>
+            <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:high&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">6th-9th</button>
+          </div>
+        </div>
       </div>
 
       <h1><span id="nhits">0</span> of <span id="nphotos">0</span> photos</h1>
