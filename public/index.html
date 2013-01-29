@@ -53,12 +53,26 @@
 
     <div class="container">
 
-      <h3>Temperature</h3>
+      <h3>Camera Temperature</h3>
       <div class="btn-group">
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:19to24&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">19-24&deg;C</button>
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:25to28&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">25-28&deg;C</button>
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:29to34&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">29-34&deg;C</button>
       </div>
+
+      <h3>Faces Detected</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:0&fields=filename,Canon_FacesDetected&size=500">No faces</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=Canon_FacesDetected:1&fields=filename,Canon_FacesDetected&size=500">Faces</button>
+      </div>
+
+      <h3>Focus Distance Upper</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0to0d3&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0-0.3m</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:0d3to9&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">0.4-10m</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:10to100&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">10-100m</button>
+      </div>
+
       <h1><span id="nhits">0</span> of <span id="nphotos">0</span> photos</h1>
       <div id="thumbnails"></div>
 

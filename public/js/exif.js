@@ -16,7 +16,7 @@ $(function() {
         dataType: 'json'
     });
     function hello (data) {
-      console.log("got photo data!");
+      console.log("got photo data!", data);
       var nhits = data.hits.total;
       $("#nhits").text(nhits);
       var hits = data.hits.hits;

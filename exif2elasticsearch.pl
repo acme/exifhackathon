@@ -21,16 +21,30 @@ foreach my $filename (keys %$data) {
     foreach my $field ('ExifIFD_ExposureCompensation', 'Canon_ExposureCompensation') {
         $exif->{$field} = eval $exif->{$field};
     }
-    $exif->{Canon_CameraTemperature} =~ s/ C$//;
-    my $temperature;
-    if ($exif->{Canon_CameraTemperature} <= 24) {
-      $temperature = '19to24';
-    } elsif ($exif->{Canon_CameraTemperature} <= 28) {
-      $temperature = '25to28',
-    } else {
-      $temperature = '29to34';
+    if (defined $exif->{Canon_CameraTemperature}) {
+      $exif->{Canon_CameraTemperature} =~ s/ C$//;
+      my $temperature;
+      if ($exif->{Canon_CameraTemperature} <= 24) {
+        $temperature = '19to24';
+      } elsif ($exif->{Canon_CameraTemperature} <= 28) {
+        $temperature = '25to28',
+      } else {
+        $temperature = '29to34';
+      }
+      $exif->{temperature} = $temperature;
     }
-    $exif->{temperature} = $temperature;
+    if (defined $exif->{Canon_FocusDistanceUpper}) {
+      $exif->{Canon_FocusDistanceUpper} =~ s/ m$//;
+      my $distance;
+      if ($exif->{Canon_FocusDistanceUpper} <= 0.3) {
+        $distance = '0to0d3';
+      } elsif ($exif->{Canon_FocusDistanceUpper} <= 9) {
+        $distance = '0d3to9',
+      } else {
+        $distance = '10to100',
+      }
+      $exif->{distance} = $distance;
+    }
     foreach my $field ('Canon_AFPointsInFocus') {
         delete $exif->{$field};
     }
