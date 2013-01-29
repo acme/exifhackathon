@@ -26,10 +26,11 @@ $(function() {
             var hits_tidy = _.map(
               hits,
               function (hit) {
-                console.log('in each', hit); 
-                var fields = hit.fields || {};
-                fields.filename = hit._id;
-                return fields;
+                console.log('in each', hit);
+                return {
+                  filename: hit._id,
+                  fields: JSON.stringify(hit.fields)
+                };
               });
             console.log(hits_tidy);
             var html = template({ hits: hits_tidy});
