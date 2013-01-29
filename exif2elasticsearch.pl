@@ -47,7 +47,6 @@ foreach my $filename (keys %$data) {
     }
     if (defined $exif->{Canon_ExposureTime}) {
       my $exposuretime;
-      say $exif->{Canon_ExposureTime};
       if ($exif->{Canon_ExposureTime} <= 0.01) {
         $exposuretime = 'low';
       } elsif ($exif->{Canon_ExposureTime} <= 0.1) {
