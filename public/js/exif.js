@@ -1,0 +1,40 @@
+$(function() {
+    console.log("Ready!");
+    var source   = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    $(document).ajaxError(function() {
+        console.log("AJAX error!");
+    });
+    $.ajax({
+        url: 'http://localhost:9200/_cluster/nodes/stats?pretty=true',
+        data: { },
+        success: function( data ) {
+            console.log("got index data!");
+            var count = (data.nodes["2kT0nozsR1-dr9FsHmBL3w"].indices.docs.count);
+            $("#nphotos").text(count);
+        },
+        dataType: 'json'
+    });
+    $.ajax({
+        url: 'http://localhost:9200/hackathon/exif/_search?q=temperature:19to24&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500',
+        data: { },
+        success: function( data ) {
+            console.log("got photo data!");
+            var nhits = data.hits.total;
+            $("#nhits").text(nhits);
+            var hits = data.hits.hits;
+            var hits_tidy = _.map(
+              hits,
+              function (hit) {
+                console.log('in each', hit); 
+                var fields = hit.fields || {};
+                fields.filename = hit._id;
+                return fields;
+              });
+            console.log(hits_tidy);
+            var html = template({ hits: hits_tidy});
+            $("#thumbnails").html(html);
+        },
+        dataType: 'json'
+    });
+});
