@@ -15,27 +15,32 @@ $(function() {
         },
         dataType: 'json'
     });
-    $.ajax({
-        url: 'http://localhost:9200/hackathon/exif/_search?q=temperature:19to24&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500',
-        data: { },
-        success: function( data ) {
-            console.log("got photo data!");
-            var nhits = data.hits.total;
-            $("#nhits").text(nhits);
-            var hits = data.hits.hits;
-            var hits_tidy = _.map(
-              hits,
-              function (hit) {
-                console.log('in each', hit);
-                return {
-                  filename: hit._id,
-                  fields: JSON.stringify(hit.fields)
-                };
-              });
-            console.log(hits_tidy);
-            var html = template({ hits: hits_tidy});
-            $("#thumbnails").html(html);
-        },
-        dataType: 'json'
+    function hello (data) {
+      console.log("got photo data!");
+      var nhits = data.hits.total;
+      $("#nhits").text(nhits);
+      var hits = data.hits.hits;
+      var hits_tidy = _.map(
+        hits,
+        function (hit) {
+          //console.log('in each', hit);
+          return {
+            filename: hit._id,
+            fields: JSON.stringify(hit.fields)
+          };
+        });
+      //console.log(hits_tidy);
+      var html = template({ hits: hits_tidy});
+      $("#thumbnails").html(html);
+    };
+    $("button").each(function( index ) {
+        console.log(index + ": " + $(this).text());
+        console.log($(this).attr('es'));
+        $(this).click(function() {
+          $.ajax({
+              url: $(this).attr('es'),
+              success: hello,
+          });
+        });
     });
 });

@@ -53,6 +53,12 @@
 
     <div class="container">
 
+      <h3>Temperature</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:19to24&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">19-24&deg;C</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:25to28&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">25-28&deg;C</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=temperature:29to34&sort=Canon_CameraTemperature&fields=filename,Canon_CameraTemperature&size=500">29-34&deg;C</button>
+      </div>
       <h1><span id="nhits">0</span> of <span id="nphotos">0</span> photos</h1>
       <div id="thumbnails"></div>
 
