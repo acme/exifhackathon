@@ -34,8 +34,6 @@ $(function() {
       $("#thumbnails").html(html);
     };
     $("button").each(function( index ) {
-        console.log(index + ": " + $(this).text());
-        console.log($(this).attr('es'));
         $(this).click(function() {
           $.ajax({
               url: $(this).attr('es'),
