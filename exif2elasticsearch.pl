@@ -69,6 +69,17 @@ foreach my $filename (keys %$data) {
       say $altitude;
       $exif->{altitude} = $altitude;
     }
+    if (defined $exif->{Canon_OpticalZoomCode}) {
+      my $zoom;
+      if ($exif->{Canon_OpticalZoomCode} <= 0) {
+        $zoom = 'low';
+      } elsif ($exif->{Canon_OpticalZoomCode} < 120) {
+        $zoom = 'medium',
+      } else {
+        $zoom = 'high',
+      }
+      $exif->{zoom} = $zoom;
+    }
     foreach my $field ('Canon_AFPointsInFocus') {
         delete $exif->{$field};
     }

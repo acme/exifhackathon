@@ -79,6 +79,13 @@
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=distance:10to100&sort=Canon_FocusDistanceUpper&fields=filename,Canon_FocusDistanceUpper&size=500">10-100m</button>
       </div>
 
+      <h3>Optical zoom</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:low&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">None</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:medium&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">Some</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=zoom:high&sort=Canon_OpticalZoomCode&fields=filename,Canon_OpticalZoomCode&size=500">Maximum</button>
+      </div>
+
       <h3>Exposure time</h3>
       <div class="btn-group">
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:low&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0-0.01s</button>
