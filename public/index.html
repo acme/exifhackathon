@@ -100,6 +100,13 @@
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:high&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">100-200m</button>
       </div>
 
+      <h3>Sequence number</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:low&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">1st</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:medium&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">2nd-5th</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=sequence:high&sort=Canon_SequenceNumber&fields=filename,Canon_SequenceNumber&size=500">6th-9th</button>
+      </div>
+
       <h1><span id="nhits">0</span> of <span id="nphotos">0</span> photos</h1>
       <div id="thumbnails"></div>
 
