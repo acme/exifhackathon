@@ -56,6 +56,19 @@ foreach my $filename (keys %$data) {
       }
       $exif->{exposuretime} = $exposuretime;
     }
+    if (defined $exif->{GPS_GPSAltitude}) {
+      $exif->{GPS_GPSAltitude} =~ s/ m$//;
+      my $altitude;
+      if ($exif->{GPS_GPSAltitude} <= 10) {
+        $altitude = 'low';
+      } elsif ($exif->{GPS_GPSAltitude} <= 100) {
+        $altitude = 'medium',
+      } else {
+        $altitude = 'high',
+      }
+      say $altitude;
+      $exif->{altitude} = $altitude;
+    }
     foreach my $field ('Canon_AFPointsInFocus') {
         delete $exif->{$field};
     }

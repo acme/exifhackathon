@@ -86,6 +86,13 @@
         <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=exposuretime:high&sort=Canon_ExposureTime&fields=filename,Canon_ExposureTime&size=500">0.1-2s</button>
       </div>
 
+      <h3>GPS Altitude</h3>
+      <div class="btn-group">
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:low&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">0-10m</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:medium&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">10-100m</button>
+        <button class="btn" es="http://localhost:9200/hackathon/exif/_search?q=altitude:high&sort=GPS_GPSAltitude&fields=filename,GPS_GPSAltitude&size=500">100-200m</button>
+      </div>
+
       <h1><span id="nhits">0</span> of <span id="nphotos">0</span> photos</h1>
       <div id="thumbnails"></div>
 
